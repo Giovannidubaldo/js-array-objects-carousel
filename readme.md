@@ -5,8 +5,8 @@ Cliccando sui pulsanti va avanti o indietro. All'ultima immagine ed alla prima n
 MILESTONE 2:
 Se si è sull'ultima immagine e si clicca sul pulsante per andare avanti, si andrà alla prima immagine. Mentre se si è sulla prima e si clicca sul pulsante per tornare indietro, si andrà all'ultima.
 
-BONUS 3:
+BONUS 1:
 Realizziamo delle thumbnail di fianco all'immagine principale e spostiamo le frecce in questa sezione (l'esercizio diventerà come graficamente come l'immagine in allegato). L'immagine corrente deve risultare più brillante delle altre.
-BONUS 3:
+BONUS 2:
 Realizziamo due pulsanti: uno per far sì che il carosello scorra da solo, l'altro per fermarlo. Lo scorrimento deve essere in questa fase andando dalla prima immagine all'ultima. Una volta sull'ultima deve ricominciare dalla prima.
 BONUS 3: E se volessi un bottone per invertire la "direzione" del carosello?

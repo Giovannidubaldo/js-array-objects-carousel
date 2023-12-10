@@ -18,6 +18,10 @@
     height: 300px;
 }
 
+.images{
+    height: 100%;
+}
+
 .item {
     height: 100%;
     display: none;

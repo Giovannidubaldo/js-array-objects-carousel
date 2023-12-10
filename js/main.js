@@ -21,3 +21,51 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+// MILESTONE 1
+// Variabile che conterrà tutte le immagini dell'array
+let img = '';
+
+// Eseguo un forEach in cui appendo tutte le immagini con la struttura che è presente nell'html
+images.forEach((elem) => {
+    img += 
+    `<div class="item">
+        <img src="./${elem.image}" alt="">
+        <div class="position-absolute bottom-50 text-right color-white padding-text">
+            <h2>${elem.title}</h2>
+            <h5>${elem.text}</h5>
+        </div>
+    </div> `
+})
+
+// Recuperiamo il contenitore delle immagini e ci appendiamo la stringa img
+const mainImage = document.querySelector('.images').innerHTML = img
+
+// Salvo in una variabile l'indice di partenza dell'array. All'elemento con questo indice assegno la classe 'active'
+let activeElement = 0;
+let imagesDom = document.querySelectorAll('.item');
+imagesDom[activeElement].classList.add('active');
+
+// Recupero i due pulsanti dal dom
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+// Aggiungere l'eventlistener al pulsante next
+nextBtn.addEventListener('click', function(){
+    // Prima rimuovo la classe active dall'elemento che attualmente ha
+    imagesDom[activeElement].classList.remove('active');
+
+    // Controllo che il valore dell'indice non sia uguale a quello dell'ultimo elemento dell'array
+    if(activeElement === images.length - 1){
+        activeElement = 0;
+    }
+    else{
+        // Incremento il valore di activeelement
+        activeElement++;
+    }
+    // Assegno nuovamente la classe active 
+    imagesDom[activeElement].classList.add('active');
+})
+
+
+
