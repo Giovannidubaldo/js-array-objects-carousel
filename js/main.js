@@ -67,5 +67,22 @@ nextBtn.addEventListener('click', function(){
     imagesDom[activeElement].classList.add('active');
 })
 
+// Aggiungere l'eventlistener al pulsante prev
+prevBtnBtn.addEventListener('click', function(){
+    // Prima rimuovo la classe active dall'elemento che attualmente ha
+    imagesDom[activeElement].classList.remove('active');
+
+    // Controllo che il valore dell'indice sia uguale a 0
+    if(activeElement === 0){
+        activeElement = images.length - 1;
+    }
+    else{
+        // Decremento il valore di activeelement
+        activeElement--;
+    }
+    // Assegno nuovamente la classe active 
+    imagesDom[activeElement].classList.add('active');
+})
+
 
 
