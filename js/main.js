@@ -26,6 +26,9 @@ const images = [
 // Variabile che conterrà tutte le immagini dell'array
 let img = '';
 
+// Variabile che conterrà le thumbnail
+let thumbnail = '';
+
 // Eseguo un forEach in cui appendo tutte le immagini con la struttura che è presente nell'html
 images.forEach((elem) => {
     img += 
@@ -36,10 +39,18 @@ images.forEach((elem) => {
             <h5>${elem.text}</h5>
         </div>
     </div> `
+
+    thumbnail += `
+    <div class="thumbnail">
+        <img src="./${elem.image}">
+    </div>`
 })
 
 // Recuperiamo il contenitore delle immagini e ci appendiamo la stringa img
 const mainImage = document.querySelector('.images').innerHTML = img
+
+// Recupero la classe thumbnail dal dom
+document.querySelector('.thumbnails').innerHTML = thumbnail
 
 // Salvo in una variabile l'indice di partenza dell'array. All'elemento con questo indice assegno la classe 'active'
 let activeElement = 0;
@@ -50,10 +61,14 @@ imagesDom[activeElement].classList.add('active');
 const nextBtn = document.querySelector('.next');
 const prevBtn = document.querySelector('.prev');
 
+let thumbnailDom = document.querySelectorAll('.thumbnail');
+thumbnailDom[activeElement].classList.add('active');
+
 // Aggiungere l'eventlistener al pulsante next
 nextBtn.addEventListener('click', function(){
     // Prima rimuovo la classe active dall'elemento che attualmente ha
     imagesDom[activeElement].classList.remove('active');
+    thumbnailDom[activeElement].classList.remove('active');
 
     // Controllo che il valore dell'indice non sia uguale a quello dell'ultimo elemento dell'array
     if(activeElement === images.length - 1){
@@ -65,10 +80,11 @@ nextBtn.addEventListener('click', function(){
     }
     // Assegno nuovamente la classe active 
     imagesDom[activeElement].classList.add('active');
+    thumbnailDom[activeElement].classList.add('active');
 })
 
 // Aggiungere l'eventlistener al pulsante prev
-prevBtnBtn.addEventListener('click', function(){
+prevBtn.addEventListener('click', function(){
     // Prima rimuovo la classe active dall'elemento che attualmente ha
     imagesDom[activeElement].classList.remove('active');
 
